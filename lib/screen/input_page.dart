@@ -1,5 +1,7 @@
+import 'package:bmi_calculator/components/icon_content.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -51,14 +53,20 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReuseableCard(),
+                  child: ReuseableCard(
+                    colour: Color(0xFFEFE4CA),
+                    cardChild: IconContent(
+                      icon: FontAwesomeIcons.mars,
+                      label: 'Male',
+                    ),
+                  ),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFEFE4CA),
-                      borderRadius: BorderRadius.circular(10.0),
+                  child: ReuseableCard(
+                    colour: Color(0xFFEFE4CA),
+                    cardChild: IconContent(
+                      icon: FontAwesomeIcons.venus,
+                      label: 'Female',
                     ),
                   ),
                 ),
@@ -68,63 +76,6 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFEFE4CA),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFEFE4CA),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                ),
-                // Expanded(
-                //   child: null,
-                // ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFEFE4CA),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFEFE4CA),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                ),
-                // Expanded(
-                //   child: null,
-                // ),
-              ],
-            ),
-          ),
-          // Expanded(child: null),
-          // Expanded(child: null),
-          // Expanded(child: null),
         ],
       ),
     );
@@ -132,16 +83,17 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReuseableCard extends StatelessWidget {
-  const ReuseableCard({
-    Key? key,
-  }) : super(key: key);
+  ReuseableCard({required this.colour, required this.cardChild});
 
+  final Color colour;
+  final Widget cardChild;
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: cardChild,
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-        color: Color(0xFFEFE4CA),
+        color: colour,
         borderRadius: BorderRadius.circular(10.0),
       ),
     );
