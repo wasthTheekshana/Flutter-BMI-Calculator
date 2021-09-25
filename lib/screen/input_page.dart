@@ -146,7 +146,7 @@ class _InputPageState extends State<InputPage> {
                         ),
                       ),
                       SizedBox(
-                        width: 250.0,
+                        width: 230.0,
                       ),
                       Text(
                         height.toString(),
@@ -201,7 +201,7 @@ class _InputPageState extends State<InputPage> {
                         ),
                       ),
                       SizedBox(
-                        width: 250.0,
+                        width: 230.0,
                       ),
                       Text(
                         weight.toString(),
@@ -319,7 +319,8 @@ class _InputPageState extends State<InputPage> {
                     ),
                   ),
                 ),
-                margin: EdgeInsets.all(15.0),
+                margin: EdgeInsets.only(
+                    top: 10.0, bottom: 50.0, left: 28.0, right: 28.0),
                 decoration: BoxDecoration(
                   color: Color(0xFFA45809),
                   borderRadius: BorderRadius.circular(15.0),
