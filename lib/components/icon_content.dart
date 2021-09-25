@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 class IconContent extends StatelessWidget {
-  IconContent({required this.icon, required this.label});
+  IconContent(
+      {required this.icon,
+      required this.label,
+      required this.iconColor,
+      required this.textColor});
 
   final IconData icon;
   final String label;
+  final Color iconColor, textColor;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,7 +19,7 @@ class IconContent extends StatelessWidget {
           Icon(
             icon,
             size: 50.0,
-            color: Colors.black,
+            color: iconColor,
           ),
           SizedBox(
             width: 10.0,
@@ -23,7 +28,7 @@ class IconContent extends StatelessWidget {
             label,
             style: TextStyle(
               fontSize: 20.0,
-              color: Colors.black,
+              color: textColor,
             ),
           )
         ],
